@@ -26,7 +26,7 @@ app.get("/Launcher/Updates.xml", function (req, res) {
   fs.readFile(filePath, "utf8", function (err, data) {
     if (err) {
       console.error(err);
-      res.status(500).send("Ocorreu um erro ao ler o arquivo");
+      res.status(500).send("Ocorreu um erro ao ler o arquivo!");
     } else {
       res.type("application/xml");
       res.send(data);
