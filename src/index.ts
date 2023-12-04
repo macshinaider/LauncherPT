@@ -18,10 +18,7 @@ app.get("/Launcher/:file(*)", function (req, res) {
 });
 
 app.get("/Launcher/Updates.xml", function (req, res) {
-  const filePath = path.join(
-    __dirname,
-    "/Launcher/Updates.xml"
-  );
+  const filePath = path.join(__dirname, "/Launcher/Updates.xml");
 
   fs.readFile(filePath, "utf8", function (err, data) {
     if (err) {
@@ -35,17 +32,17 @@ app.get("/Launcher/Updates.xml", function (req, res) {
 });
 
 app.get("/Launcher/arquivo.txt", function (req, res) {
-    const filePath = path.join(__dirname, '/Launcher/arquivo.txt');
-  
-    fs.readFile(filePath, 'utf8', function(err, data) {
-      if (err) {
-        console.error(err);
-        res.status(500).send('Ocorreu um erro ao ler o arquivo');
-      } else {
-        res.send(data);
-      }
-    });
+  const filePath = path.join(__dirname, "/Launcher/arquivo.txt");
+
+  fs.readFile(filePath, "utf8", function (err, data) {
+    if (err) {
+      console.error(err);
+      res.status(500).send("Ocorreu um erro ao ler o arquivo");
+    } else {
+      res.send(data);
+    }
   });
+});
 
 app.listen(port, () => {
   console.log(`Servidor rodando em http://localhost:${port}`);
